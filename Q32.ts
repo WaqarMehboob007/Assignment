@@ -1,0 +1,34 @@
+// MUHAMMAD WAQAR MEHBOOB
+// Roll No: PIAIC209125
+// PIAIC-Q1-Batch 43
+// 19 Mar 2023
+// -----------------------------------------------------------------------------------------------
+
+// Question # 32: 
+// ========================================================================================================
+
+// Checking Usernames: Do the following to create a program that simulates how websites ensure that everyone has a unique username.
+
+// • Make a list of five or more usernames called current_users.
+
+// • Make another list of five usernames called new_users. Make sure one or two of the new usernames are also in the current_users list.
+
+// • Loop through the new_users list to see if each new username has already been used. If it has, print a message that the person will need to enter a new username. If a username has not been used, print a message saying that the username is available.
+
+// • Make sure your comparison is case insensitive. If 'John' has been used, 'JOHN' should not be accepted.
+
+const userName: string[] = ["abid", "Ali","Bilal","Waqar","Taha"];
+const new_users: string[] = ["Abid", "Saba","Waqar","Imran","Zoha"];
+//To lowercase the array elements
+// console.log(userName.map(lowercase => lowercase.toLowerCase()));
+
+new_users.forEach(element => {
+    
+    if (userName.map(lowercase => lowercase.toLowerCase()).includes(element.toLowerCase())) {
+        console.log(`User Name ${element} already exist, You need to enter New UserName`);
+    }else {
+        console.log("Username is available");
+    }
+});
+
+
