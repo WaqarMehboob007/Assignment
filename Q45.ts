@@ -8,27 +8,28 @@ import { features } from "process";
 
 // Question # 45
 // ========================================================================================================
-// Cars: Write a function that stores information about a car in a Object. 
+// Cars: Write a function that stores information about a car in an Object. 
 // The function should always receive a manufacturer and a model name. 
 // It should then accept an arbitrary number of keyword arguments. 
 // Call the function with the required information and two other name-value pairs, such as a color or an optional feature. 
 // Print the Object that’s returned to make sure all the information was stored correctly.
 
-
-function car(manufacture:string, model:string, feature? :{})
-{   
-    if (!feature){
-        let carInfo = {manufacturer:manufacture, model:  model }
-        return carInfo;
-    }else{
-        let carInfo = {manufacturer:manufacture, model:  model, feature}
-        return carInfo;
-    }
-    
+type carinformation = {
+    manufacturer: string;
+    model: string;
+    color?:string;
 }
 
-let car1= car("Toyota","Altis",{Color:"white"});
-let car2=car("Toyota","Altis");
+function carNew(newCar: carinformation, feature?:{}){
+    
+let vehicleInfo = {
+    ...newCar,
+    ...feature,
+}
+return vehicleInfo;
 
-console.log(car1);
-console.log(car2);
+}
+
+console.log(carNew({manufacturer: "Honda", model: "2017", color: "blue"},{engine: "1300CC", carType: "Sedan"}));
+
+
