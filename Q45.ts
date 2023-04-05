@@ -4,8 +4,6 @@
 // 19 Mar 2023
 // -----------------------------------------------------------------------------------------------
 
-import { features } from "process";
-
 // Question # 45
 // ========================================================================================================
 // Cars: Write a function that stores information about a car in an Object. 
@@ -20,7 +18,7 @@ type carinformation = {
     color?:string;
 }
 
-function carNew(newCar: carinformation, feature?:{}){
+function Car(newCar: carinformation, feature?:{}){
     
 let vehicleInfo = {
     ...newCar,
@@ -30,6 +28,6 @@ return vehicleInfo;
 
 }
 
-console.log(carNew({manufacturer: "Honda", model: "2017", color: "blue"},{engine: "1300CC", carType: "Sedan"}));
+console.log(Car({manufacturer: "Honda", model: "2017", color: "blue"},{engine: "1300CC", carType: "Sedan"}));
 
 
